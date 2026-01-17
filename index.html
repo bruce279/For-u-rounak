@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For You, Rounak 💙</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>For You, Rounak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       height: 100vh;
@@ -12,36 +17,91 @@
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: "Segoe UI", sans-serif;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 650px;
+      padding: 40px 25px;
       text-align: center;
+      animation: fadeIn 1.2s ease;
     }
-    .box {
-      max-width: 600px;
-      padding: 30px;
-    }
+
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
+
     p {
       font-size: 1.2rem;
-      line-height: 1.6;
+      line-height: 1.7;
       opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      opacity: 1;
+      font-weight: 500;
+    }
+
+    button {
+      margin-top: 35px;
+      padding: 14px 34px;
+      font-size: 1rem;
+      background: #ffffff;
+      color: #0f2027;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+      background: #dbeafe;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="box">
-    <h1>Hey Rounak 👋</h1>
+  <div class="container">
+    <h1>Hey Rounak</h1>
+
     <p>
-      This isn’t just a website.  
-      It’s a small corner of the internet made only for you.
+      This page wasn’t made to impress anyone.
+      It exists for one simple reason — you.
     </p>
+
+    <p class="highlight">
+      I don’t know how long time will allow us,
+      but this page stands as a reflection of my feelings.
+    </p>
+
     <p>
-      I don’t know how long time will allow us, but this page stands as a reflection of my feelings.
+      No pressure. No expectations.
+      Just honesty, placed quietly on the internet.
     </p>
+
+    <button onclick="goNext()">Open this when you’re ready</button>
   </div>
+
+  <script>
+    function goNext() {
+      "window.location.href = "letter.html";
+    }
+  </script>
 </body>
 </html>
-
