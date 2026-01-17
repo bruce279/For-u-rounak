@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0f2027, #203a43);
+      color: #ffffff;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .wrapper {
+      max-width: 800px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .section {
+      margin-bottom: 90px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .date {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .shayari {
+      margin-top: 25px;
+      padding-left: 20px;
+      border-left: 3px solid rgba(255,255,255,0.3);
+      font-style: italic;
+    }
+
+    .closing {
+      text-align: center;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="section">
+      <div class="date">20 September 2025</div>
+      <p>
+        You asked me,<br>
+        <em>“Mera saath kahan tak doge tum?”</em>
+      </p>
+      <p>
+        I smiled and said,<br>
+        <em>“Jab tak na kaho ki main hara.”</em>
+      </p>
+      <p>
+        At the time, it sounded casual.<br>
+        But I meant it more than I showed.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        Days passed.<br>
+        We talked normally, like nothing had changed.
+      </p>
+      <p>
+        But some feelings don’t disappear —<br>
+        they just wait for the right moment.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="date">29 November 2025</div>
+      <p>
+        That moment came when I finally said what I had been holding back.
+      </p>
+      <p>
+        <strong>I love you.</strong><br>
+        I didn’t even know why I said it then —<br>
+        I just knew I couldn’t stay silent anymore.
+      </p>
+
+      <div class="shayari">
+        <p>
+          Yahan har saltanat hai teri, har sultan hai tera<br>
+          Idhar insaan hai tera, udhar bhagwan hai tera<br>
+          Zameen se aasmaan tak har jagah gungan hai tera<br>
+          Ye duniya chal rahi hai aaj tak, ahsaan hai tera
+        </p>
+      </div>
+    </div>
+
+    <div class="section closing">
+      <p>
+        I don’t know what the future holds.<br>
+        But I know this —<br>
+        these words, this moment, and this feeling were real.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
 
